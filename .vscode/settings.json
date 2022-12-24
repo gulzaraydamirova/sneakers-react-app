@@ -1,9 +1,6 @@
 {
   "editor.tokenColorCustomizations": {
-    "comments": {
-      "foreground": "#FF0000",
-      "fontStyle": "bold"
-    },
+    "comments": "",
     "textMateRules": []
   }
 }
