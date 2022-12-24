@@ -3,6 +3,387 @@ import React from "react";
 function App() {
   return (
     <div className="wrapper clear">
+      {/* sidebar */}
+      <div className="overlay">
+        <div className="drawer">
+          <div className=" header-line">
+            <h2>Корзина</h2>
+            <svg
+              className="remove-btn"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0.5"
+                y="0.5"
+                width="31"
+                height="31"
+                rx="7.5"
+                fill="white"
+                stroke="#DBDBDB"
+              />
+              <path
+                d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                fill="#B5B5B5"
+              />
+            </svg>
+          </div>
+
+          <div className="cartItems d-flex flex-column">
+            {/* CartItem-1 STARTS*/}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/2.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-1 ENDS */}
+
+            {/* CartItem-2 STARTS */}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/6.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Jordan Air Jordan 11</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-2 ENDS */}
+
+            {/* CartItem-1 STARTS*/}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/2.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-1 ENDS */}
+
+            {/* CartItem-2 STARTS */}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/6.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Jordan Air Jordan 11</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-2 ENDS */}
+
+           {/* CartItem-1 STARTS*/}
+           <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/2.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-1 ENDS */}
+
+            {/* CartItem-2 STARTS */}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/6.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Jordan Air Jordan 11</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-2 ENDS */} 
+
+            {/* CartItem-1 STARTS*/}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/2.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Nike Air Max 270</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-1 ENDS */}
+
+            {/* CartItem-2 STARTS */}
+            <div className="cartItem d-flex align-center">
+              <div
+                style={{ backgroundImage: "url(/img/sneakers/6.jpg)" }}
+                className="cartItemImg"
+              ></div>
+
+              <div
+                style={{ width: "218px", marginRight: "15px" }}
+                className="flex"
+              >
+                <p>Мужские Кроссовки Jordan Air Jordan 11</p>
+                <b>12 999 руб.</b>
+              </div>
+              <button>
+                <svg
+                  className="remove-btn"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.5"
+                    y="0.5"
+                    width="31"
+                    height="31"
+                    rx="7.5"
+                    fill="white"
+                    stroke="#DBDBDB"
+                  />
+                  <path
+                    d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z"
+                    fill="#B5B5B5"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* CartItem-2 ENDS */}
+          </div>
+
+          <div className="cartTotalBlock">
+            <ul>
+              <li>
+                <span>Итого: </span>
+                <div className="dashed-block"></div>
+                <b>21 498 руб.</b>
+              </li>
+
+              <li>
+                <span>Налог 5%: </span>
+                <div className="dashed-block"></div>
+                <b>1074 руб.</b>
+              </li>
+            </ul>
+            <button className="greenButton">
+              Оформить заказ
+              <img src="/img/arrow.svg" alt="Arrow" />
+            </button>
+          </div>
+        </div>
+      </div>
+
       <header className="d-flex justify-between align-center p-40">
         <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.png" alt="Logo" />
@@ -13,7 +394,7 @@ function App() {
         </div>
 
         <div>
-          <ul className="d-flex ">
+          <ul className="d-flex header">
             <li className="mr-30">
               <img width={18} height={17} src="/img/cart.svg" alt="Cart" />
               <span>1205 руб.</span>
@@ -26,7 +407,7 @@ function App() {
       </header>
 
       <div className="content p-40">
-        <div className="d-flex  justify-between align-center mb-40">
+        <div className="content-header d-flex  justify-between align-center mb-40">
           <h1>Все кроссовки</h1>
           <div className="search-block d-flex ">
             <img src="/img/search.svg" alt="Search" />
@@ -36,6 +417,9 @@ function App() {
 
         <div className="sneakers d-flex justify-center">
           <div className="card">
+            <div className="favorite pos-a cu-p">
+              <img src="/img/heart-unliked.svg" alt="Heart-unliked" />
+            </div>
             <img
               width={133}
               height={112}
@@ -96,7 +480,7 @@ function App() {
             <img
               width={133}
               height={112}
-              src="/img/sneakers/7.jpg"
+              src="/img/sneakers/3.jpg"
               alt="Sneakers-1"
             />
             <h5>Мужские Кроссовки Nike Kyrie 7</h5>
