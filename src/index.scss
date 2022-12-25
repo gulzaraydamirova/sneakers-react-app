@@ -11,7 +11,6 @@ body {
 //!WRAPPER
 .wrapper {
   background: #ffffff;
-  border: 1px solid brown;
   max-width: 100%;
   margin: 0px auto;
 }
@@ -69,42 +68,14 @@ header {
 }
 //!SNEAKERS DİV
 .sneakers {
-  gap: 30px;
+  // padding: 0 68px!important;
+  gap: 40px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  //  justify-content: center;
+  justify-content: center;
 }
 
 //!CARDS
-.card {
-  border: 1px solid #f3f3f3;
-  padding: 30px;
-  width: 300px;
-  height: 410px;
-  border-radius: 40px;
-  transition: all 0.2s ease-in-out;
 
-  &:hover {
-    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
-    transform: translateY(-5px);
-    cursor: pointer;
-  }
-
-  h5 {
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  span {
-    font-size: 15px;
-    text-transform: uppercase;
-    opacity: 0.5;
-  }
-
-  b {
-    font-size: 18px;
-  }
-}
 
 .button {
   background: #fff;
@@ -114,6 +85,10 @@ header {
   height: 50px;
   width: 50px;
 }
+
+
+
+
 
 //!SIDEBAR - STARTS -
 
@@ -125,7 +100,6 @@ header {
   height: 100%;
   background-color: rgb(0, 0, 0, 0.5);
   z-index: 1;
-  //  display: none;
 }
 
 .drawer {
@@ -182,13 +156,13 @@ header {
   // display: none !important;
   flex: 1;
   gap: 1.7rem;
-  margin: 2.5rem 0 11rem; //40 0 176 0
+  margin: 2rem 0 11rem; //40 0 176 0
 
   .cartItem {
     border: 1px solid #f3f3f3;
     border-radius: 20px;
     overflow: hidden;
-    height: 7.5rem; //120
+    height: 6.5rem; //120
     padding: 18px;
 
     .cartItemImg {
