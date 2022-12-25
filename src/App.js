@@ -407,7 +407,9 @@ function App() {
         <div className="sneakers d-flex">
           <div className="card">
             <div className="favorite pos-a cu-p">
-              <img src="/img/heart-unliked.svg" alt="Heart-unliked" />
+            <button className="button cu-p">
+                <img width={20} height={20} src="/img/heart-unliked.svg" alt="Add" />
+              </button>
             </div>
             <img
               width={230}
@@ -422,12 +424,17 @@ function App() {
                 <b>12 999 руб.</b>
               </div>
               <button className="button cu-p">
-                <img width={11} height={11} src="/img/btn-plus.svg" alt="Add" />
+                <img width={15} height={15} src="/img/btn-plus.svg" alt="Add" />
               </button>
             </div>
           </div>
 
           <div className="card">
+          <div className="favorite pos-a cu-p">
+            <button className="button cu-p">
+                <img width={20} height={20} src="/img/heart-unliked.svg" alt="Add" />
+              </button>
+            </div>
             <img
               width={230}
               height={193}
@@ -441,12 +448,17 @@ function App() {
                 <b>12 999 руб.</b>
               </div>
               <button className="button cu-p">
-                <img width={11} height={11} src="/img/btn-plus.svg" alt="Add" />
+                <img width={15} height={15} src="/img/btn-plus.svg" alt="Add" />
               </button>
             </div>
           </div>
 
           <div className="card">
+          <div className="favorite pos-a cu-p">
+            <button className="button cu-p">
+                <img width={20} height={20} src="/img/heart-unliked.svg" alt="Add" />
+              </button>
+            </div>
             <img
               width={230}
               height={193}
@@ -460,12 +472,17 @@ function App() {
                 <b>12 999 руб.</b>
               </div>
               <button className="button cu-p">
-                <img width={11} height={11} src="/img/btn-plus.svg" alt="Add" />
+                <img width={15} height={15} src="/img/btn-plus.svg" alt="Add" />
               </button>
             </div>
           </div>
 
           <div className="card">
+          <div className="favorite pos-a cu-p">
+            <button className="button cu-p">
+                <img width={20} height={20} src="/img/heart-unliked.svg" alt="Add" />
+              </button>
+            </div>
             <img
               width={230}
               height={193}
@@ -479,7 +496,7 @@ function App() {
                 <b>12 999 руб.</b>
               </div>
               <button className="button cu-p">
-                <img width={11} height={11} src="/img/btn-plus.svg" alt="Add" />
+                <img width={15} height={15} src="/img/btn-plus.svg" alt="Add" />
               </button>
             </div>
           </div>
