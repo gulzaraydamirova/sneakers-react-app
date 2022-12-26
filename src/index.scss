@@ -44,26 +44,37 @@ header {
 
 //!CONTENT
 .content {
+  // border: 1px solid red;
   h1 {
     margin: 0;
     margin-right: 10%;
-  }
-
-  .content-header {
-    justify-content: flex-start !important;
   }
 }
 
 .search-block {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
-  padding: 0 15px;
-  width: 46.769%;
+  padding: 0 20px;
+  margin-right: 65px;
+  position: relative;
 
   input {
     border: none;
     padding: 13px;
     font-size: 16px;
+  }
+  .quick-design {
+    opacity: 0.2;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 //!SNEAKERS DİV
@@ -76,7 +87,6 @@ header {
 
 //!CARDS
 
-
 .button {
   background: #fff;
   border: 1px solid #f2f2f2;
@@ -85,10 +95,6 @@ header {
   height: 50px;
   width: 50px;
 }
-
-
-
-
 
 //!SIDEBAR - STARTS -
 
@@ -99,17 +105,18 @@ header {
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 .drawer {
   position: absolute;
   display: flex;
   flex-direction: column;
+
   right: 0;
   top: 0;
 
-  width: 420px;
+  width: 437px;
   height: 100%;
   padding: 30px 20px 2%;
 
@@ -119,20 +126,20 @@ header {
   overflow: auto;
 
   .header-line {
-    // border: 1px solid rgba(0, 0, 0, 0.9);
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.06);
-    right: 1.25rem;
-    padding: 0 1.1rem;
+    // box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.06);
+    padding: 0 1.5rem 0 0;
 
-    position: fixed;
-    top: 0;
+    // position: fixed;
+    position: absolute;
+    top: 10px;
     width: 25rem;
+    margin-left: 0 !important;
     height: 3rem;
     z-index: 2;
     background-color: #fff;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     align-items: center;
 
     h2 {
@@ -152,7 +159,7 @@ header {
 //!SIDEBAR - ENDS -
 
 //!CARTITEM - STARTS -
-.cartItems {
+.items {
   // display: none !important;
   flex: 1;
   gap: 1.7rem;
@@ -182,11 +189,6 @@ header {
       font-size: 14px;
     }
 
-    button {
-      border: none;
-      background-color: transparent;
-    }
-
     .remove-btn {
       opacity: 0.5;
       transition: opacity 0.15s ease-in-out;
@@ -204,16 +206,10 @@ header {
 
 //!CARTTOTALBLOCK - STARTS -
 .cartTotalBlock {
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.06);
-
-  // display: none;
-  position: fixed;
-  bottom: 0;
-  right: 1.1rem;
-  width: 25rem;
+  // width: 23.5rem;
   z-index: inherit;
   background-color: #fff;
-  padding: 0.3rem 1.1rem 1.1rem;
+  // padding: 0.3rem 1.1rem 1.1rem;
 
   ul {
     margin-bottom: 10% !important;
