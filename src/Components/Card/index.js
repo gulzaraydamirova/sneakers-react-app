@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./card.module.scss";
-console.log(styles);
+// console.log(styles);
 
-function Card(props) {
-  // console.log(props);
+function Card({ title, imgUrl, price, onClickFavorite, onClickPlus }) {
   const [isAdded, setIsAdded] = React.useState(false);
+
   const onClickAdd = () => {
+    onClickPlus({ title, imgUrl, price });
     setIsAdded(!isAdded);
   };
-
-
 
   return (
     <div className={styles.card}>
@@ -20,15 +19,15 @@ function Card(props) {
           className={styles.plus}
           src="/img/heart-unliked.svg"
           alt="heart-unliked"
-          onClick={props.onClickFavorite}
+          onClick={onClickFavorite}
         />
       </div>
-      <img width={230} height={193} src={props.imgUrl} alt="Sneakers-1" />
-      <h5>{props.title}</h5>
+      <img width={230} height={193} src={imgUrl} alt="Sneakers-1" />
+      <h5>{title}</h5>
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column">
           <span>Цена:</span>
-          <b>{props.price} руб.</b>
+          <b>{price} руб.</b>
         </div>
 
         <img

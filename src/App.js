@@ -1,72 +1,90 @@
-import React from "react";
+import React from "react"
+import axios from "axios";
 import Card from "./Components/Card";
 import Header from "./Components/Header";
 import Drawer from "./Components/Drawer";
 
-const arr = [
-  {
-    "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-    "price": "12 999",
-    "imgUrl": "/img/sneakers/1.jpg"
-  },
-  {
-    "title": "Мужские Кроссовки Nike Air Max 270",
-    "price": "12 599",
-    "imgUrl": "/img/sneakers/5.jpg"
-  },
-  {
-    "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-    "price": "8 499",
-    "imgUrl": "/img/sneakers/2.jpg"
-  },
-  {
-    "title": "Мужские Кроссовки Jordan Air Jordan 11",
-    "price": "10 799",
-    "imgUrl": "/img/sneakers/6.jpg"
-  },
-  {
-    "title": "Мужские Кроссовки Nike Kyrie 7",
-    "price": "11 299",
-    "imgUrl": "/img/sneakers/7.jpg"
-  },
-  {
-    "title": "Мужские Кроссовки Nike LeBron XVIII",
-    "price": "16 499",
-    "imgUrl": "/img/sneakers/8.jpg"
-  }
-];
-
 function App() {
+  const [items, setItems] = React.useState([]);
+
+  const [cartItems, setCartItems] = React.useState([]);
+
+  const [searchValue, setSearchValue] = React.useState("");
+
   const [cartOpened, setCartOpened] = React.useState(false);
+
+  React.useEffect(() => {
+    axios
+    .get("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
+    .then((res) => {
+      setItems(res.data);
+    });
+  }, []);
+
+  const onAddToCart = (obj) => {
+    axios
+      .get("https://63a8cdfe100b7737b98569aa.mockapi.io/cart")
+      .then((res) => {
+        setItems(res.data);
+      });
+    setCartItems((prev) => [...prev, obj]);
+  };
+  // console.log(cartItems);
+
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
 
   return (
     <div className="wrapper clear">
       {/* sidebar */}
-      {cartOpened && <Drawer  onCloseCart={() => setCartOpened(false)} />}
+      {cartOpened && (
+        <Drawer items={cartItems} onCloseCart={() => setCartOpened(false)} />
+      )}
       <Header onClickCart={() => setCartOpened(true)} />
 
       <div className="content p-40">
         <div className="content-header d-flex  justify-between align-center mb-50">
-          <h1>Все кроссовки</h1>
+          <h1>
+            {searchValue
+              ? `Поиск по запросу: "${searchValue}"`
+              : "Все кроссовки"}
+          </h1>
           <div className="search-block d-flex ">
             <img src="/img/search.svg" alt="Search" />
-            <input placeholder="Поиск..." />
+            {searchValue && (
+              <img
+                onClick={() => setSearchValue("")}
+                className="quick-design"
+                src="/img/closee.svg"
+                alt="remove-btn"
+              />
+            )}
+            <input
+              onChange={onChangeSearchInput}
+              value={searchValue}
+              placeholder="Поиск..."
+            />
           </div>
         </div>
 
         <div className="sneakers d-flex">
-          {arr.map((obj) => {
-            return (
-              <Card
-                title={obj.title}
-                price={obj.price}
-                imgUrl={obj.imgUrl}
-                onClickFavorite={() => console.log("added to favs")}
-                onClickPlus={() => console.log("pressed button")}
-              />
-            );
-          })}
-          {}
+          {items
+            .filter((item) =>
+              item.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
+            .map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  title={item.title}
+                  price={item.price}
+                  imgUrl={item.imgUrl}
+                  onClickFavorite={() => console.log("added to favs")}
+                  onClickPlus={(obj) => onAddToCart(obj)}
+                />
+              );
+            })}
         </div>
       </div>
     </div>
