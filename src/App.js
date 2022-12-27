@@ -1,43 +1,50 @@
 import React from "react";
-// import axios from "axios";
 import Card from "./Components/Card";
 import Header from "./Components/Header";
 import Drawer from "./Components/Drawer";
+import axios from "axios";
 
 function App() {
   const [items, setItems] = React.useState([]);
 
   const [cartItems, setCartItems] = React.useState([]);
 
+  const [favorites, setFavorites] = React.useState([]);
+
   const [searchValue, setSearchValue] = React.useState("");
 
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
-    fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
+    axios
+      .get("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
       .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setItems(json);
-        console.log(json);
-      })
-      .catch((error) => {
-        console.log("An error occurred");
+        setItems(res.data);
+      });
+
+    axios
+      .get("https://63aa07877d7edb3ae61ee73e.mockapi.io/cart")
+      .then((res) => {
+        setCartItems(res.data);
       });
   }, []);
 
-  const onAddToCart = (obj) => {
-    // fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/cart")
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((json) => {
-    //     setItems(json);
-    //   });
-    setCartItems((prev) => [...prev, obj]);
+  const onRemoveFromCart = (id) => {
+    // console.log(id);
+    axios.delete(`https://63aa07877d7edb3ae61ee73e.mockapi.io/cart/${id}`);
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
-  // console.log(cartItems);
+
+  //POSTING
+  const onAddToCart = (obj) => {
+    axios
+      .post("https://63aa07877d7edb3ae61ee73e.mockapi.io/cart", obj)
+      .then((res) => setCartItems((prev) => [...prev, res.data]));
+  };
+  const onAddToFavorite = (obj) => {
+    axios.post("https://63aa07877d7edb3ae61ee73e.mockapi.io/favorites", obj);
+    setFavorites((prev) => [...prev, obj]);
+  };
 
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
@@ -45,10 +52,16 @@ function App() {
 
   return (
     <div className="wrapper clear">
-      {/* sidebar */}
+      {/*sidebar */}
+
       {cartOpened && (
-        <Drawer items={cartItems} onCloseCart={() => setCartOpened(false)} />
+        <Drawer
+          items={cartItems}
+          onClose={() => setCartOpened(false)}
+          onRemove={onRemoveFromCart}
+        />
       )}
+
       <Header onClickCart={() => setCartOpened(true)} />
 
       <div className="content p-40">
@@ -84,11 +97,11 @@ function App() {
             .map((item, index) => {
               return (
                 <Card
-                  key={index}
+                  key={item.imgUrl}
                   title={item.title}
                   price={item.price}
                   imgUrl={item.imgUrl}
-                  onClickFavorite={() => console.log("added to favs")}
+                  onClickFavorite={(obj) => onAddToFavorite(obj)}
                   onClickPlus={(obj) => onAddToCart(obj)}
                 />
               );

@@ -1,14 +1,14 @@
 import React from "react";
 import "../index.scss";
 
-function Drawer({ onCloseCart, items = [] }) {
+function Drawer({ onClose, onRemove, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
         <div className=" header-line">
           <h2>Корзина</h2>
           <svg
-            onClick={onCloseCart}
+            onClick={onClose}
             width="31px"
             height="25px"
             viewBox="0 0 1024 1024"
@@ -22,51 +22,71 @@ function Drawer({ onCloseCart, items = [] }) {
           </svg>
         </div>
 
-        <div className="items d-flex flex-column">
-          {items.map((obj) => {
-            return (
-              <div className="cartItem d-flex align-center">
+        {items.length > 0 ? (
+          <div className="d-flex flex-column flex">
+            <div className="items d-flex flex-column flex">
+              {items.map((obj) => (
                 <div
-                  style={{ backgroundImage: `url(${obj.imgUrl})` }}
-                  className="cartItemImg"
-                ></div>
-
-                <div
-                  style={{ width: "218px", marginRight: "15px" }}
-                  className="flex"
+                  key={obj.id}
+                  className="cartItem d-flex align-center mb-20"
                 >
-                  <p>{obj.title}</p>
-                  <b>{obj.price} руб.</b>
+                  <div
+                    style={{ backgroundImage: `url(${obj.imgUrl})` }}
+                    className="cartItemImg"
+                  ></div>
+
+                  <div className="flex mr-20">
+                    <p className="mb-5">{obj.title}</p>
+                    <b>{obj.price} руб.</b>
+                  </div>
+                  <img
+                    onClick={() => onRemove(obj.id)}
+                    className="btn-remove cu-p"
+                    src="/img/btn-remove.svg"
+                    alt="remove-btn"
+                  />
                 </div>
-                <img
-                  className="btn-remove"
-                  src="/img/btn-remove.svg"
-                  alt="remove-btn"
-                />
-              </div>
-            );
-          })}
-        </div>
+              ))}
+            </div>
+            <div className="cartTotalBlock">
+              <ul>
+                <li>
+                  <span>Итого: </span>
+                  <div className="dashed-block"></div>
+                  <b>12 999 руб.</b>
+                </li>
 
-        <div className="cartTotalBlock">
-          <ul>
-            <li>
-              <span>Итого: </span>
-              <div className="dashed-block"></div>
-              <b>21 498 руб.</b>
-            </li>
-
-            <li>
-              <span>Налог 5%: </span>
-              <div className="dashed-block"></div>
-              <b>1074 руб.</b>
-            </li>
-          </ul>
-          <button className="greenButton">
-            Оформить заказ
-            <img src="/img/arrow.svg" alt="Arrow" />
-          </button>
-        </div>
+                <li>
+                  <span>Налог 5%: </span>
+                  <div className="dashed-block"></div>
+                  <b>1074 руб.</b>
+                </li>
+              </ul>
+              <button className="greenButton">
+                Оформить заказ
+                <img src="/img/arrow.svg" alt="Arrow" />
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="cartEmpty d-flex align-center justify-center flex-column flex">
+            <img
+              className="mb-20"
+              width={120}
+              height={120}
+              src="/img/empty-cart.jpg"
+              alt="empty-cart"
+            />
+            <h2>Корзина пустая</h2>
+            <p className="opacity-6">
+              Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
+            </p>
+            <button onClick={onClose} className=" greenButton greenButton1">
+              <img src="/img/arrow.svg" alt="arrow" />
+              Вернуться назад
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
