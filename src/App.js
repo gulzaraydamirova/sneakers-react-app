@@ -1,5 +1,5 @@
-import React from "react"
-import axios from "axios";
+import React from "react";
+// import axios from "axios";
 import Card from "./Components/Card";
 import Header from "./Components/Header";
 import Drawer from "./Components/Drawer";
@@ -14,18 +14,22 @@ function App() {
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
-    axios
-    .get("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
-    .then((res) => {
-      setItems(res.data);
-    });
+    fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
   }, []);
 
   const onAddToCart = (obj) => {
-    axios
-      .get("https://63a8cdfe100b7737b98569aa.mockapi.io/cart")
+    fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
       .then((res) => {
-        setItems(res.data);
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
       });
     setCartItems((prev) => [...prev, obj]);
   };
@@ -70,9 +74,7 @@ function App() {
 
         <div className="sneakers d-flex">
           {items
-            .filter((item) =>
-              item.title.toLowerCase().includes(searchValue.toLowerCase())
-            )
+            .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
             .map((item, index) => {
               return (
                 <Card
