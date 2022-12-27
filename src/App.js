@@ -20,17 +20,21 @@ function App() {
       })
       .then((json) => {
         setItems(json);
+        console.log(json);
+      })
+      .catch((error) => {
+        console.log("An error occurred");
       });
   }, []);
 
   const onAddToCart = (obj) => {
-    fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/items")
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setItems(json);
-      });
+    // fetch("https://63aa07877d7edb3ae61ee73e.mockapi.io/cart")
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((json) => {
+    //     setItems(json);
+    //   });
     setCartItems((prev) => [...prev, obj]);
   };
   // console.log(cartItems);
@@ -74,7 +78,9 @@ function App() {
 
         <div className="sneakers d-flex">
           {items
-            .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
+            .filter((item) =>
+              item.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
             .map((item, index) => {
               return (
                 <Card
