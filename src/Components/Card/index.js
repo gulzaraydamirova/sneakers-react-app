@@ -1,4 +1,5 @@
 import React from "react";
+import ContentLoader from "react-content-loader"
 import styles from "./card.module.scss";
 // console.log(styles);
 
@@ -28,7 +29,7 @@ function Card({
 
   return (
     <div className={styles.card}>
-      <div className={styles.favorite}>
+      {/* <div className={styles.favorite}>
         <img
           width={50}
           height={50}
@@ -54,7 +55,22 @@ function Card({
           alt="add-btn"
           onClick={onClickAdd}
         />
-      </div>
+      </div> */}
+       <ContentLoader 
+    speed={2}
+    width={230}
+    height={347}
+    viewBox="0 0 230 347"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
+    {...props}
+  >
+    <rect x="0" y="0" rx="10" ry="10" width="230" height="195" /> 
+    <rect x="0" y="221" rx="6" ry="6" width="230" height="24" /> 
+    <rect x="0" y="259" rx="6" ry="6" width="160" height="24" /> 
+    <rect x="0" y="313" rx="6" ry="6" width="102" height="30" /> 
+    <rect x="178" y="295" rx="10" ry="10" width="50" height="50" />
+  </ContentLoader>
     </div>
   );
 }

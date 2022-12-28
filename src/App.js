@@ -34,9 +34,9 @@ function App() {
         "https://63aa07877d7edb3ae61ee73e.mockapi.io/favorites"
       );
 
+      setItems(itemsResponse.data);
       setCartItems(cartResponse.data);
       setFavorites(favoritesResponse.data);
-      setItems(itemsResponse.data);
     }
     fetchData();
   }, []);
