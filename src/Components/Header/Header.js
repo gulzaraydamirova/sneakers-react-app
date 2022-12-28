@@ -1,16 +1,18 @@
 import React from "react";
-import "../index.scss";
-
+import "./header.module.scss";
+import { Link } from "react-router-dom";
 function Header(props) {
   return (
     <header className="d-flex justify-between align-center p-40">
+        <Link to="/">
       <div className="d-flex align-center">
-        <img width={50} height={50} src="/img/logo.png" alt="Logo" />
-        <div>
-          <h3>REACT SNEAKERS</h3>
-          <p className="opacity-5">Магазин лучших кроссовок</p>
-        </div>
+          <img width={50} height={50} src="/img/logo.png" alt="Logo" />
+          <div>
+            <h3>REACT SNEAKERS</h3>
+            <p className="opacity-5">Магазин лучших кроссовок</p>
+          </div>
       </div>
+        </Link>
 
       <div>
         <ul className="d-flex header">
@@ -20,7 +22,9 @@ function Header(props) {
           </li>
 
           <li>
-            <img width={30} height={22} src="img/heart.svg" alt="Favorites" />
+            <Link to="/favorites">
+              <img width={30} height={22} src="img/heart.svg" alt="Favorites" />
+            </Link>
           </li>
 
           <li>

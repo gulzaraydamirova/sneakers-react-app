@@ -1,11 +1,13 @@
 import React from "react";
-import "../index.scss";
+import styles from "./drawer.module.scss";
+
+
 
 function Drawer({ onClose, onRemove, items = [] }) {
   return (
-    <div className="overlay">
-      <div className="drawer">
-        <div className=" header-line">
+    <div className={styles.overlay}>
+      <div className={styles.drawer}>
+        <div className=" header-line d-flex justify-between">
           <h2>Корзина</h2>
           <svg
             onClick={onClose}

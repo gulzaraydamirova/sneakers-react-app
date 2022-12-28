@@ -1,6 +1,14 @@
 import Card from "../Components/Card";
 
-function Home() {
+function Home({
+  items,
+  cartItems,
+  searchValue,
+  setSearchValue,
+  onChangeSearchInput,
+  onAddToFavorite,
+  onAddToCart,
+}) {
   return (
     <div className="content p-40">
       <div className="content-header d-flex  justify-between align-center mb-50">
@@ -25,7 +33,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="sneakers d-flex">
+      <div className="sneakers d-flex flex-wrap justify-center">
         {items
           .filter((item) =>
             item.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -34,11 +42,10 @@ function Home() {
             return (
               <Card
                 key={item.imgUrl}
-                title={item.title}
-                price={item.price}
-                imgUrl={item.imgUrl}
                 onClickFavorite={(obj) => onAddToFavorite(obj)}
                 onClickPlus={(obj) => onAddToCart(obj)}
+                added={cartItems.some(obj=> obj.id===Number(item.id))}
+                {...item}
               />
             );
           })}

@@ -16,34 +16,7 @@ body {
   margin: 0px auto;
 }
 
-//!HEADER
-header {
-  border-bottom: 1px solid #eaeaea;
-  img {
-    margin-right: 20px;
-  }
 
-  h3 {
-    margin: 0;
-    font-size: 22px;
-  }
-
-  p {
-    margin: 0;
-    font-size: 17px;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    cursor: pointer;
-
-    span {
-      font-size: 18px;
-    }
-  }
-}
 
 //!CONTENT
 .content {
@@ -110,159 +83,12 @@ header {
 //!SNEAKERS DİV
 .sneakers {
   gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 //!CARDS
 //...
 
-//!SIDEBAR - STARTS -
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  // visibility: hidden;
-  // opacity: 0;
-  // transition: opacity 0.1s ease-out, visibility 0.1s ease-out;
-  // overflow: hidden;
-}
-
-.drawer {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-
-  right: 0;
-
-  width: 420px;
-  height: 100%;
-  padding: 25px 30px;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-  // transform: translateX(100%);
-  // transition: transform 0.3s ease-out;
-  background: #fff;
-  z-index: 1;
-  overflow: auto;
-
-  .items {
-    flex: 1;
-    overflow: auto;
-    // gap: 1.7rem;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  .header-line {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between !important;
-    align-items: center;
-  }
-  svg {
-    &:hover {
-      cursor: pointer;
-      path {
-        fill: rgb(126, 20, 41);
-      }
-    }
-  }
-}
-//!SIDEBAR - ENDS -
-
-//!CARTITEM - STARTS -
-
-.cartItem {
-  border: 1px solid #f3f3f3;
-  border-radius: 20px;
-  overflow: hidden;
-  // height: 6.5rem; //120
-  padding: 18px;
-
-  .cartItemImg {
-    width: 70px;
-    height: 70px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 15px;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  b {
-    font-size: 15px;
-  }
-
-  .remove-btn {
-    opacity: 0.5;
-    transition: all 0.15s ease-in-out;
-
-    &:hover {
-      cursor: pointer;
-      transform: rotate(180deg) translateX(3px);
-      opacity: 1;
-      path {
-        fill: rgb(126, 20, 41);
-      }
-    }
-  }
-}
-//!CARTITEM - ENDS -
-
-//!CARTTOTALBLOCK - STARTS -
-.cartTotalBlock {
-  ul {
-    display: block;
-    margin-bottom: 40px !important;
-
-    li {
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 20px;
-
-      div {
-        flex: 1;
-        height: 1px;
-        border: none;
-        border-bottom: 1px dashed #0000005b;
-        position: relative;
-        top: -5px;
-        margin: 0 10px;
-      }
-    }
-  }
-
-  .greenButton {
-    position: relative;
-
-    &:disabled {
-      animation: button-loading 0.6s ease-in-out infinite;
-    }
-
-    &:hover {
-      img {
-        transform: translateX(5px);
-      }
-    }
-
-    img {
-      position: absolute;
-      right: 100px;
-      top: 20px;
-      transition: transform 0.15s ease-in-out;
-    }
-  }
-}
-//!CARTTOTALBLOCK - ENDS -
 
 .greenButton {
   width: 100%;
