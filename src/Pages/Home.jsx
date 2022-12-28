@@ -38,14 +38,14 @@ function Home({
           .filter((item) =>
             item.title.toLowerCase().includes(searchValue.toLowerCase())
           )
-          .map((item, index) => {
+          .map((item) => {
             return (
               <Card
                 key={item.imgUrl}
                 onClickFavorite={(obj) => onAddToFavorite(obj)}
                 onClickPlus={(obj) => onAddToCart(obj)}
                 added={cartItems.some(obj=> obj.id===Number(item.id))}
-                loading={false}
+                loading={true}
                 {...item}
               />
             );
