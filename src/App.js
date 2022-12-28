@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Route } from "react-router-dom";
+
 import Header from "./Components/Header";
 import Drawer from "./Components/Drawer";
 import Home from "./Pages/Home";
@@ -51,7 +52,6 @@ function App() {
       axios.delete(
         `https://63aa07877d7edb3ae61ee73e.mockapi.io/cart/${obj.id}`
       );
-
       setCartItems((prev) => prev.filter((item) => item.id !== obj.id));
     } else {
       axios.post("https://63aa07877d7edb3ae61ee73e.mockapi.io/cart", obj);

@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 .react-sneakers-presentation.pptx
+./react-sneakers-presentation.pptx
 /.pnp
 .pnp.js
 
