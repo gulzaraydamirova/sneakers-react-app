@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Route } from "react-router-dom";
-import Header from "./Components/Header/Header";
-import Drawer from "./Components/Drawer/Drawer";
+import Header from "./Components/Header";
+import Drawer from "./Components/Drawer";
 import Home from "./Pages/Home";
 import Favorites from "./Pages/Favorites";
 

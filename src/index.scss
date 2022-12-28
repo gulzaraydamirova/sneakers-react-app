@@ -88,6 +88,88 @@ body {
 //!CARDS
 //...
 
+//!CARTITEM - STARTS -
+
+.cartItem {
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  overflow: hidden;
+  // height: 6.5rem; //120
+  padding: 18px;
+
+  .cartItemImg {
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  b {
+    font-size: 15px;
+  }
+
+  .remove-btn {
+    opacity: 0.5;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(180deg) translateX(3px);
+      opacity: 1;
+      path {
+        fill: rgb(126, 20, 41);
+      }
+    }
+  }
+}
+//!CARTITEM - ENDS -
+
+//!CARTTOTALBLOCK - STARTS -
+.cartTotalBlock {
+  ul {
+    display: block;
+    margin-bottom: 40px !important;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+      div {
+        flex: 1;
+        height: 1px;
+        border: none;
+        border-bottom: 1px dashed #0000005b;
+        position: relative;
+        top: -5px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .greenButton {
+    position: relative;
+
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 60px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+//!CARTTOTALBLOCK - ENDS -
 
 
 .greenButton {
