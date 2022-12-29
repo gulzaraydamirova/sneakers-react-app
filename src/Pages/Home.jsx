@@ -45,7 +45,6 @@ function Home({
                 onClickFavorite={(obj) => onAddToFavorite(obj)}
                 onClickPlus={(obj) => onAddToCart(obj)}
                 added={cartItems.some(obj=> obj.id===Number(item.id))}
-                loading={true}
                 {...item}
               />
             );
